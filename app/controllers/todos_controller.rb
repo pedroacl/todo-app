@@ -1,24 +1,51 @@
 class TodosController < ApplicationController
-    def new
-      @todo = Todo.new
-    end
+  def index
+    @todos = Todo.all
+  end
 
-    def create
-       @todo = Todo.new(todo_params)
+  def new
+    @todo = Todo.new
+  end
 
-       if @todo.save
-         redirect_to todo_path(@todo)
-       else
-         render "new"
-       end
-    end
+  # Create todo
+  def create
+     @todo = Todo.new(todo_params)
 
-    def show
-      @todo = Todo.find(params[:id])
-    end
+     if @todo.save
+       redirect_to todo_path(@todo)
+     else
+       render "new"
+     end
+  end
 
-    private
-    def todo_params
-        params.require(:todo).permit(:name, :description)
+  def show
+    @todo = Todo.find(params[:id])
+  end
+
+  def edit
+    @todo = Todo.find(params[:id])
+  end
+
+  def update
+    @todo = Todo.new(todo_params)
+
+    if @todo.save
+      redirect_to todo_path(@todo)
+    else
+      render "edit"
     end
+  end
+
+  def destroy
+    @todo = Todo.find params[:id]
+    @todo.destroy
+
+    flash[:notice] = 'Todo successfully deleted!'
+    redirect_to todos_path
+  end
+
+  private
+  def todo_params
+      params.require(:todo).permit(:name, :description)
+  end
 end

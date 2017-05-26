@@ -1,4 +1,4 @@
-<h1>Create a new Todo</h1>
+<h1>Edit a Todo</h1>
 
 <% if @todo.errors.any? %>
   <h2>Errors!</h2>
@@ -10,7 +10,7 @@
   </ul>
 <% end %>
 
-<%= form_for @todo do |f| %>
+<%= form_for @todo, method: 'POST' do |f| %>
   <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -23,9 +23,5 @@
     <%= @todo.errors[:description].first %>
   </div>
 
-  <%= f.submit "Create" %>
+  <%= f.submit "Update" %>
 <% end %>
-
-<br />
-
-<%= link_to "Todos", todos_path %>
