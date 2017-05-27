@@ -6,7 +6,7 @@ class TodosController < ApplicationController
   end
 
   def new
-    @todo = Todo.new
+    @todo = Todo.news
   end
 
   # Create todo
