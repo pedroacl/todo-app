@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
+  <base href="/">
   <head>
     <title>TodoApp</title>
     <%= csrf_meta_tags %>
@@ -9,7 +10,8 @@
 
   <body>
     <%= render "layouts/navigation" %>
-    <div class="container">
+    <div class="container" ng-controller="MainController as mainController">
+      {{ 1 + 2 }}
       <%= yield %>
     </div>
   </body>
