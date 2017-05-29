@@ -9,10 +9,9 @@
   </head>
 
   <body>
-    <%= render "layouts/navigation" %>
+    <div ng-include src="'layouts/navigation.html'"></div>
     <div class="container" ng-controller="MainController as mainController">
-      {{ 1 + 2 }}
-      <%= yield %>
+      <div ng-view></div>
     </div>
   </body>
 </html>

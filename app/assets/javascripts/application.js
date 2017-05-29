@@ -12,6 +12,13 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require jquery/dist/jquery.min
+//= require bootstrap/dist/js/bootstrap.min
+//= require angular/angular
+//= require angular-route/angular-route.min
+//
+//= require angular-rails-templates
+// Templates in app/assets/javascript/angular/views
+//= require_tree ./angular/views
+//
 //= require_tree .
-//= require bootstrap
-//= require angular.min
