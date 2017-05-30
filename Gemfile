@@ -30,6 +30,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'angular-rails-templates'
 gem 'sprockets'
+gem 'sidekiq'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
